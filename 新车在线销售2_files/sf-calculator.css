@@ -1,0 +1,1660 @@
+* {
+  box-sizing: border-box;
+}
+
+:after, :before {
+  box-sizing: border-box;
+}
+
+input, textarea, select {
+  font-size: initial;
+}
+
+sf-calculator {
+  font-family: Arial, "Microsoft YaHei", SimHei, "Hiragino Sans GB", STXihei;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  min-height: 400px;
+}
+
+sf-calculator, .sf_calLoading {
+  display: none;
+}
+
+.error-content_SF_CAL h2 {
+  font-size: 24px;
+}
+
+.sf_calLoading.active {
+  display: block;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+  /* background: rgba(226,226,226, 0.5); */
+  height: 100%;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sf_calLoading.active>div img {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.sf-js-clearfix {
+  clear: both;
+}
+
+.topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li:first-child>a {
+  border-left: none !important;
+}
+
+.topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li.active>div, .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li:hover>div {
+  color: #1570d7;
+  background-color: transparent;
+  border: none;
+}
+
+.topParent_SF_CAL .customInfoIconDefault_SF_CAL {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.topParent_SF_CAL .customInfoIconHover_SF_CAL {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.topParent_SF_CAL .customInfoIconHover_SF_CAL {
+  display: none;
+}
+
+.topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li.active .customInfoIconDefault_SF_CAL, .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li:hover .customInfoIconDefault_SF_CAL {
+  display: none;
+}
+
+.topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li.active .customInfoIconHover_SF_CAL, .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li:hover .customInfoIconHover_SF_CAL {
+  display: block;
+}
+
+.topParent_SF_CAL .hideSFElement {
+  display: none;
+}
+
+.topParent_SF_CAL .installmentTitles {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.topParent_SF_CAL .customInnerInfoIcon_SF_CAL {
+  color: #1570d7;
+}
+
+.topParent_SF_CAL .topParent {
+  padding: 0px 30px 0px 30px;
+  position: relative;
+  clear: both;
+}
+
+.topParent_SF_CAL .amtInput_SF_CAL option:disabled {
+  display: none;
+}
+
+.row_SF_CAL {
+  margin-right: -15px;
+  margin-left: -15px;
+  position: relative;
+}
+
+.row_SF_CAL:before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.row_SF_CAL:after {
+  clear: both;
+  content: "";
+}
+
+.col-xs-12_SF_CAL, .col-xs-11_SF_CAL, .col-xs-10_SF_CAL, .col-xs-9_SF_CAL, .col-xs-8_SF_CAL, .col-xs-7_SF_CAL, .col-xs-6_SF_CAL, .col-xs-5_SF_CAL, .col-xs-4_SF_CAL, .col-xs-3_SF_CAL, .col-xs-2_SF_CAL, .col-xs-1_SF_CAL {
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.tabcontent_SF_CAL.stepdowntab .SFamount_SF_CAL {
+  float: right;
+}
+
+.col-xs-12_SF_CAL {
+  width: 100%;
+  float: none;
+}
+
+.col-xs-11_SF_CAL {
+  width: 91.66666667%;
+}
+
+.col-xs-10_SF_CAL {
+  width: 83.33333333%;
+}
+
+.col-xs-9_SF_CAL {
+  width: 75%;
+}
+
+.col-xs-8_SF_CAL {
+  width: 66.66666667%;
+}
+
+.col-xs-7_SF_CAL {
+  width: 58.33333333%;
+}
+
+.col-xs-6_SF_CAL {
+  width: 50%;
+}
+
+.col-xs-5_SF_CAL {
+  width: 41.66666667%;
+}
+
+.col-xs-4_SF_CAL {
+  width: 33.33333333%;
+}
+
+.col-xs-3_SF_CAL {
+  width: 25%;
+}
+
+.col-xs-2_SF_CAL {
+  width: 16.66666667%;
+}
+
+.col-xs-1_SF_CAL {
+  width: 8.33333333%;
+}
+
+.topParent_SF_CAL table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+.topParent_SF_CAL td, th {
+  padding: 0;
+}
+
+.sf-js-terms-wrap-inner .header_SF_CAL {
+  /* margin-left: -5px; */
+}
+
+.topParent_SF_CAL input {
+  line-height: inherit;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+input[type="radio"]:checked+.radio-label_SF_CAL:before {
+  background-color: #1570d7;
+  box-shadow: inset 0 0 0 4px white;
+  border: 1px solid #1570d7;
+}
+
+input[type="radio"]+.radio-label_SF_CAL:before {
+  content: " ";
+  background: white;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  position: relative;
+  top: 0.2em;
+  margin-right: 3px;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+}
+
+.topParent_SF_CAL .select_SF_CAL {
+  position: relative;
+  overflow: hidden;
+}
+
+.topParent_SF_CAL select {
+  width: 100%;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  background: transparent;
+}
+
+.popUp {
+  display: none;
+}
+
+.customInfoIconHover_SF_CAL:hover+.popUp {
+  display: block;
+}
+
+.popover_SF_CAL.bottom {
+  margin-top: 10px;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.popover_SF_CAL {
+  position: absolute;
+  top: 39px;
+  left: 30px;
+  z-index: 1060;
+  display: none;
+  width: 276px;
+  padding: 1px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.popover_SF_CAL.bottom>.arrow {
+  top: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999;
+  border-bottom-color: rgba(0, 0, 0, .25);
+}
+
+.popover_SF_CAL>.arrow {
+  border-width: 11px;
+}
+
+.popover_SF_CAL>.arrow, .popover_SF_CAL>.arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.popover_SF_CAL.bottom>.arrow:after {
+  top: 1px;
+  margin-left: -10px;
+  content: " ";
+  border-top-width: 0;
+  border-bottom-color: #fff;
+}
+
+.popover_SF_CAL>.arrow:after {
+  content: "";
+  border-width: 10px;
+}
+
+.popover-title_SF_CAL {
+  color: #222222;
+  font-size: 14pt;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-left: 16px;
+  padding-bottom: 10px;
+}
+
+.popover-des_SF_CAL {
+  color: #888888;
+  font-size: 12pt;
+  font-family: arial;
+  padding-bottom: 10px;
+  padding-left: 16px;
+}
+
+.popover-content_SF_CAL {
+  padding: 0px;
+}
+
+.popoverimg_SF_CAL {
+  vertical-align: middle;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+/*content:"\13400A5"*/
+
+.topParent_SF_CAL .nav_SF_CAL {
+  background-color: #f9f9f9;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+/* .topParent_SF_CAL .nav-tabs_SF_CAL {
+    overflow: hidden;
+    max-width: 800px;
+    border-bottom: none;
+}
+ */
+
+.topParent_SF_CAL ol, .topParent_SF_CAL ul {
+  margin-top: 0;
+}
+
+/* .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li:first-child{
+    border-left: 1px solid #adadad;
+}
+ .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li{
+    border-right: 1px solid #adadad;
+    min-width: 200px;
+}
+ .topParent_SF_CAL .nav-tabs_SF_CAL>li{
+    cursor: pointer;
+    display: table-cell;
+}
+ .topParent_SF_CAL .nav_SF_CAL>li {
+    position: relative;
+}
+ .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li.active .tabTitle_SF_CAL, .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li.active .tabTitleDesc_SF_CAL, .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li:hover .tabTitle_SF_CAL, .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li:hover .tabTitleDesc_SF_CAL{
+    color: #1c69d4;
+}
+ .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li>div.border_line_SF_CAL{
+    height: 5px;
+    padding: 0px;
+    bottom: 0px;
+    width: 80%;
+    background-color: #b9b9b9;
+     position: absolute;
+}
+ .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li.active>div.border_line_SF_CAL,.topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li:hover>div.border_line_SF_CAL{
+    background-color: #1c69d4;
+}
+ .topParent_SF_CAL .nav-tabs_SF_CAL.tabsParent_SF_CAL>li>div{
+    padding-bottom: 10px;
+    width: 100%;
+}
+ */
+
+.topParent_SF_CAL .tabcontent_SF_CAL {
+  padding: 0px;
+  /*border: 1px solid #ccc;*/
+  border-top: none;
+  width: 100%;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  margin: 0 auto;
+}
+
+.topParent_SF_CAL .normaltab .installmentDetails_SF_CAL, .topParent_SF_CAL .ballontab .installmentDetails_SF_CAL, .topParent_SF_CAL .bonustab .installmentDetails_SF_CAL, .topParent_SF_CAL .stepdowntab .installmentDetails_SF_CAL {
+  width: 100%;
+}
+
+.leftArrow_SF_CAL {
+  left: 0;
+}
+
+.rightArrow_SF_CAL {
+  right: 0;
+}
+
+.leftArrow_SF_CAL[disabled] {
+  background: #edeaea;
+}
+
+.rightArrow_SF_CAL[disabled] {
+  background: #edeaea;
+}
+
+.sf-js-terms-button.disabled {
+  background: #edeaea;
+  cursor: default;
+}
+
+/* .topParent_SF_CAL .SFPaymnet_SF_CAL {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+} */
+
+.topParent_SF_CAL .input-yen {
+  position: relative;
+  padding: initial;
+  /* padding-left: 0px!important; */
+}
+
+.topParent_SF_CAL .inputText {
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.topParent_SF_CAL .leftArrow_SF_CAL>div, .topParent_SF_CAL .rightArrow_SF_CAL>div {
+  height: 12px;
+  width: 12px;
+  border: 1px solid white;
+}
+
+.topParent_SF_CAL .leftArrow_SF_CAL>div {
+  border-width: 2px 0 0 2px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.topParent_SF_CAL .rightArrow_SF_CAL>div {
+  border-width: 2px 2px 0 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.sf-js-carousel-main i {
+  border: solid #FFF;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  top: 0;
+  position: relative;
+}
+
+.sf-js-carousel-main .right {
+  border-color: #FFF;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  left: -2px;
+}
+
+.sf-js-carousel-main .left {
+  border-color: #FFF;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  left: 2px;
+}
+
+.sf-js-terms-wrap-inner i {
+  border: solid #FFF;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  top: 32px;
+  position: relative;
+}
+
+.sf-js-terms-wrap-inner .right {
+  border-color: #FFF;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  left: -2px;
+}
+
+.sf-js-terms-wrap-inner .left {
+  border-color: #FFF;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  left: 2px;
+}
+
+.sf-js-carousel-arrow {
+  position: absolute;
+  padding: 0px;
+  height: 114px;
+  width: 20px;
+  background: #666;
+  border: none;
+  outline: none;
+  z-index: 9999;
+}
+
+.topParent_SF_CAL .control_SF_CAL {
+  position: relative;
+  padding-left: 26px;
+  padding-top: 1px;
+  cursor: pointer;
+}
+
+.topParent_SF_CAL .control_SF_CAL input {
+  opacity: 0;
+  position: absolute;
+}
+
+.topParent_SF_CAL .control_SF_CAL input:checked+.control_indicator_SF_CAL {
+  background: white;
+  border: 1px solid #1c69d4;
+}
+
+.topParent_SF_CAL .control_SF_CAL input:checked+.control_indicator_SF_CAL:after {
+  display: block;
+}
+
+.topParent_SF_CAL .control_indicator_SF_CAL:after {
+  left: 6px;
+  top: 3px;
+  width: 3px;
+  height: 8px;
+  border: solid #1570d7;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  box-sizing: unset;
+  content: " ";
+  position: absolute;
+  display: none;
+}
+
+.topParent_SF_CAL .border_SF_CAL {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.topParent_SF_CAL .drop_SF_CAL>div {
+  height: 12px;
+  width: 12px;
+  border: 1px solid white;
+}
+
+.topParent_SF_CAL .drop_SF_CAL>div {
+  border-width: 2px 2px 0 0;
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-left: 12px;
+  margin-bottom: 5px;
+}
+
+.topParent_SF_CAL .drop_SF_CAL {
+  position: absolute;
+  padding: 0px;
+  height: 40px;
+  width: 40px;
+  background: #1570d7;
+  border: 2px solid #1570d7;
+  right: 0px;
+  pointer-events: none;
+}
+
+.topParent_SF_CAL label {
+  margin-bottom: 0px;
+}
+
+.topParent_SF_CAL .name_SF_CAL {
+  float: left;
+  position: relative;
+  margin-top: 1px;
+}
+
+.topParent_SF_CAL .price_SF_CAL {
+  /* float: right;
+  text-align: right; */
+}
+
+.action_SF_CAL {
+  width: 60px;
+  display: table;
+  padding-top: 15px;
+}
+
+.buttonerror_SF_CAL {
+  font-size: 14px;
+  font-weight: bold;
+  height: 40px;
+  padding: 0 15px;
+  text-align: center;
+  background-color: #ccc;
+  cursor: pointer;
+  color: #fff;
+  vertical-align: middle;
+  display: table-cell;
+  word-break: break-word;
+  overflow: hidden;
+  line-height: 17px;
+}
+
+.button-blue_SF_CAL {
+  background-color: #1c69d4;
+}
+
+.button-blue_SF_CAL:hover {
+  background-color: #0653B6;
+}
+
+.errorMsg_SF_CAL {
+  font-weight: bold;
+  font-size: 16px;
+  color: #444444;
+  text-align: left;
+}
+
+.error_SF_CAL {
+  z-index: 5;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 500px;
+  overflow: auto;
+}
+
+/* Modal Content */
+
+.error-content_SF_CAL {
+  background-color: #fff;
+  margin-top: 64px !important;
+  margin: auto;
+  padding: 20px;
+  /* border: 1px solid #888;
+  width: 50%; */
+}
+
+.errorLoad_SF_CAL {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  right: 0;
+}
+
+.errorLoad_SF_CAL {
+  z-index: 555555;
+  padding-top: 100px;
+  width: 96%;
+  height: 100%;
+  background: rgba(136, 136, 136, 0.4);
+  margin: 0 auto;
+}
+
+/* Modal Content */
+
+.errorLoad-content_SF_CAL {
+  background-color: #fff;
+  margin-top: 200px !important;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.sf-js-terms-wrap-inner {
+  width: 100%;
+  /* padding: 0 5px; */
+}
+
+/* .sf-js-terms-wrap ul li:first-child {
+  padding-left: 12px;
+}
+
+.sf-js-terms-wrap ul li:last-child {
+  padding-right: 0;
+} */
+
+.sf-js-terms-wrap {
+  overflow: hidden;
+}
+
+.sf-js-terms-button {
+  height: 87px;
+  width: 20px;
+  background: #666;
+  /* border: 2px solid #666; */
+  position: absolute;
+  outline: none;
+  top: 67px;
+  display: block;
+  text-align: center;
+}
+
+.sf-js-terms-wrap {
+  position: relative;
+}
+
+.sf-js-terms-wrap-inner-main {
+  width: 100%;
+  overflow: hidden;
+  /* margin: 0 auto; */
+  /*border-bottom: 1px solid #e6e6e6;*/
+}
+
+.sf-js-terms-wrap-inner-main ul {
+  width: 9999px;
+}
+
+.sf-js-terms-wrap-inner-main ul li {
+  display: inline-block;
+  width: 222px;
+}
+
+.topParent_SF_CAL .paddingTop1_SF_CAL {
+  padding-top: 20px;
+}
+
+.topParent_SF_CAL .paddingTop2_SF_CAL {
+  padding-top: 24px;
+}
+
+.topParent_SF_CAL .paddingTop3_SF_CAL {
+  padding-top: 10px;
+}
+
+.topParent_SF_CAL .paddingTop4_SF_CAL {
+  padding-top: 25px;
+}
+
+.topParent_SF_CAL .paddingRight1_SF_CAL {
+  padding-right: 30px;
+}
+
+.topParent_SF_CAL .paddingBottom_SF_CAL {
+  padding-bottom: 14px;
+}
+
+.topParent_SF_CAL .paddingLeft0_SF_CAL {
+  padding-left: 0px;
+}
+
+/*Customer Type*/
+
+.topParent_SF_CAL .header_SF_CAL, .topParent_SF_CAL .header1_SF_CAL {
+  font-size: 16px;
+  color: #222222;
+  font-weight: normal;
+  right: 14px;
+}
+
+.topParent_SF_CAL .custdiv_SF_CAL {
+  padding-top: 14px;
+  /*border-bottom: 1px solid #e6e6e6;*/
+  padding-bottom: 20px;
+  right: 14px;
+}
+
+.topParent_SF_CAL .custVal_SF_CAL {
+  font-weight: bold;
+  font-size: 16px;
+  color: #222222;
+  cursor: pointer;
+}
+
+.topParent_SF_CAL .btnleft_SF_CAL {
+  left: -5px;
+  height: 125px;
+}
+
+.topParent_SF_CAL .btnright_SF_CAL {
+  right: -5px;
+  height: 125px;
+}
+
+.tabcontent_SF_CAL>.col-xs-12_SF_CAL {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/*Nav Tabs*/
+
+.topParent_SF_CAL .tabTitle_SF_CAL {
+  font-weight: bold;
+  font-size: 14px;
+  color: #b9b9b9;
+}
+
+.topParent_SF_CAL .tabTitleDesc_SF_CAL {
+  font-weight: normal;
+  font-size: 14px;
+  color: #b9b9b9;
+}
+
+.topParent_SF_CAL .amtMonthly_SF_CAL {
+  padding-top: 30px;
+  padding-bottom: 0;
+  /* border-bottom: 1px solid #e6e6e6; */
+  ;
+}
+
+.topParent_SF_CAL .SFamount_SF_CAL {
+  /* float: right; */
+  color: #222222;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.topParent_SF_CAL .amtInput_SF_CAL {
+  font-weight: normal;
+  font-size: 16px;
+  color: #262626;
+  border: solid 2px #ccc;
+}
+
+.topParent_SF_CAL .paddingcal_SF_CAL {
+  font-weight: normal;
+  font-size: 14px;
+  color: #888888;
+}
+
+.topParent_SF_CAL .buttonTypes_SF_CAL {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 24px;
+}
+
+.topParent_SF_CAL .termInterest_SF_CAL {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.topParent_SF_CAL .button_SF_CAL {
+  padding: 20px 10px;
+  font-size: 16px;
+  font-weight: normal;
+  /*background: #f9f9f9;*/
+  background: white;
+  border: 1px solid lightgrey;
+  color: #444444;
+  width: 100%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.topParent_SF_CAL .active>a {
+  /*background: white;*/
+  background: #f9f9f9;
+  color: #1c69d4;
+  border: 1px solid #1c69d4;
+  /* font-size: 16px; */
+  font-weight: normal;
+  outline: none;
+}
+
+.topParent_SF_CAL .purchaseTax_SF_CAL {
+  padding-top: 20px;
+}
+
+.topParent_SF_CAL .taxValue_SF_CAL {
+  font-weight: bold;
+  font-size: 14px;
+  color: #222222;
+}
+
+.topParent_SF_CAL .header2_SF_CAL {
+  font-weight: normal;
+  font-size: 14px;
+  color: #222222;
+}
+
+.header2_SF_CAL a:hover {
+  text-decoration: underline;
+}
+
+/* .topParent_SF_CAL a {
+  font-weight: normal;
+  font-size: 14px;
+  color: #1c69d4;
+  text-decoration: underline;
+} */
+
+.topParent_SF_CAL .data_SF_CAL {
+  font-weight: normal;
+  font-size: 14px;
+  color: #888888;
+  font-family: Arial;
+}
+
+.topParent_SF_CAL .datapadding_SF_CAL {
+  padding-top: 14px;
+  padding-bottom: 26px;
+}
+
+.topParent_SF_CAL .datapadding1_SF_CAL {
+  padding-bottom: 26px;
+}
+
+.topParent_SF_CAL tr.year1_SF_CAL>td {
+  padding-top: 17px;
+  padding-bottom: 24px;
+}
+
+.topParent_SF_CAL tr.year2>td {
+  padding-bottom: 24px;
+}
+
+.topParent_SF_CAL .control_indicator_SF_CAL {
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  height: 18px;
+  width: 18px;
+  background: white;
+  border: 1px solid #b4b4b4;
+}
+
+.topParent_SF_CAL .input-yen:before {
+  position: absolute;
+  content: "\00A5";
+  padding: 7px;
+  padding-left: 15px;
+  font-weight: normal;
+  font-size: 16px;
+  color: #262626;
+}
+
+/*Carousel CSS*/
+
+.sf-js-carousel-main {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.sf-js-carousel-inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 9999px;
+  position: relative;
+}
+
+.sf-js-carousel-inner ul li {
+  width: 240px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  vertical-align: top;
+  min-height: 114px;
+}
+
+.sf-js-li-main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 20px 20px 0;
+  top: 0;
+}
+
+.sf-popover {
+  display: none;
+  position: absolute;
+  top: 39px;
+  left: 30px;
+  z-index: 1060;
+  width: 276px;
+  padding: 1px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.left-arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.left-arrow div {
+  margin-left: 4px;
+  border-width: 2px 0 0 2px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);  
+  border-color: #fff;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.sf-js-carousel-inner {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.sf-js-carousel-inner ul li.active {
+  background: #f9f9f9;
+}
+
+.sf-js-tab_main {
+  padding: 0;
+}
+
+.sf-js-arrow {
+  width: 20px;
+  background: #cccccc;
+  border: 2px solid #cccccc;
+  height: 112px;
+  cursor: pointer;
+}
+
+.sf-js-arrow a {
+  display: block;
+  position: absolute;
+  top: 40%;
+}
+
+.sf-js-carousel-title h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  word-wrap: break-word;
+  width: 90%;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+/* .sf-js-carousel-inner ul li:after {
+  content: '';
+  background: #adadad;
+  position: absolute;
+  top: 30px;
+  right: 1px;
+  width: 1px;
+  height: 70px;
+} */
+
+.sf-js-carousel-inner ul li:last-child:after {
+  content: none;
+}
+
+.sf-js-li-border {
+  height: 5px;
+  padding: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: #b9b9b9;
+  position: absolute;
+  width: 83%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.bmw-i-icon {
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  display: block;
+  line-height: 20px;
+}
+
+.sf-js-carousel-inner ul li .bmw-i-icon {
+  position: absolute;
+  right: -10px;
+  top: 0;
+}
+
+.sf-js-carousel-title {
+  position: relative;
+  /*color: #b9b9b9;*/
+  color: black;
+  margin-bottom: 10px;
+}
+
+.sf-js-short-desc p {
+  word-wrap: break-word;
+  line-height: 1.8em;
+  max-height: 3.6em;
+  overflow: hidden;
+  /*color: #b9b9b9;*/
+  color: black;
+  font-size: 14px;
+}
+
+.sf-js-carousel-inner ul li.active .sf-js-carousel-title {
+  /*color: #1c69d4;*/
+  color: black;
+}
+
+.sf-js-carousel-inner ul li.active .sf-js-short-desc {
+  color: #1c69d4;
+}
+
+.sf-js-carousel-inner ul li.active .bmw-i-icon {
+  color: #FFF;
+  background-color: #1c69d4;
+}
+
+.sf-js-carousel-inner ul li.active .sf-js-li-border {
+  background-color: #1c69d4;
+}
+
+.sf-js-carousel-inner ul li:hover .sf-js-carousel-title {
+  color: #1c69d4;
+}
+
+.sf-js-carousel-inner ul li:hover .sf-js-short-desc {
+  color: #1c69d4;
+}
+
+.sf-js-carousel-inner ul li:hover .bmw-i-icon {
+  color: #FFF;
+  background-color: #1c69d4;
+  text-decoration: none;
+}
+
+.sf-js-carousel-inner ul li:hover .sf-js-li-border {
+  background-color: #1c69d4;
+}
+
+.sf-js-calc-main-wrap {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.condition_SF_CAL h3, .disclamier_SF_CAL h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #222222;
+}
+
+.topParent_SF_CAL .purchase_SF_CAL {
+  padding-bottom: 14px;
+}
+
+.topParent_SF_CAL .insurance_SF_CAL {
+  padding-bottom: 18px;
+}
+
+/*popover*/
+
+.sf-cal-js-popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 1px;
+  text-align: left;
+  white-space: normal;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  display: block;
+  width: 300px;
+  height: 170px;
+}
+
+.sf-cal-js-popover.bottom, .sf-cal-js-popover.bottom-left, .sf-cal-js-popover.bottom-right {
+  margin-top: 10px
+}
+
+.sf-cal-js-popover.in {
+  -webkit-transform: none;
+  -o-transform: none;
+  transform: none;
+  opacity: 1;
+  filter: alpha(opacity=100)
+}
+
+.sf-cal-js-popover .sf-cal-js-popover-content {
+  padding: 9px 14px;
+  overflow-y: scroll;
+  display: block;
+  height: 131px;
+  line-height: 24px;
+}
+
+.sf-cal-js-popover-title {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  background-color: #fff;
+  border-bottom: 1px solid #f2f2f2;
+  border-radius: 5px 5px 0 0
+}
+
+.sf-cal-js-popover-content {
+  padding: 9px 14px;
+  overflow: auto;
+  display: none
+}
+
+.sf-cal-js-popover>.sf-cal-js-arrow, .sf-cal-js-popover>.sf-cal-js-arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid
+}
+
+.sf-cal-js-popover>.sf-cal-js-arrow {
+  border-width: 11px
+}
+
+.sf-cal-js-popover>.sf-cal-js-arrow:after {
+  border-width: 10px;
+  content: ""
+}
+
+.sf-cal-js-popover.top>.sf-cal-js-arrow, .sf-cal-js-popover.top-right>.sf-cal-js-arrow, .sf-cal-js-popover.top-left>.sf-cal-js-arrow {
+  bottom: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-color: #999;
+  border-top-color: rgba(0, 0, 0, .25);
+  border-bottom-width: 0
+}
+
+.sf-cal-js-popover.bottom>.sf-cal-js-arrow, .sf-cal-js-popover.bottom-right>.sf-cal-js-arrow, .sf-cal-js-popover.bottom-left>.sf-cal-js-arrow {
+  top: -11px;
+  left: 50%;
+  margin-left: 39px;
+  border-bottom-color: #999;
+  border-bottom-color: rgba(0, 0, 0, .25);
+  border-top-width: 0
+}
+
+.sf-cal-js-popover.bottom>.sf-cal-js-arrow:after, .sf-cal-js-popover.bottom-right>.sf-cal-js-arrow:after, .sf-cal-js-popover.bottom-left>.sf-cal-js-arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-bottom-color: #fff;
+  border-top-width: 0
+}
+
+.sf-cal-js-popover i.icon-refresh:before {
+  content: ""
+}
+
+.sf-cal-js-popover i.icon-refresh {
+  display: block;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-left: -15px;
+  margin-right: -15px;
+  background: url(../img/loading.gif) no-repeat
+}
+
+/*popover end*/
+
+.sf-cal-js-popover-content img {
+  width: 100%;
+  height: auto;
+}
+
+.termInterest_monthly_SF_CAL:after {
+  content: "x";
+  margin: 0 5px;
+}
+
+label.control_SF_CAL.control-checkbox_SF_CAL.header_SF_CAL {
+  float: left;
+}
+
+.purchase_SF_CAL .customInnerInfoIcon_SF_CAL {
+  float: left;
+  margin-left: 7px;
+}
+
+.insurance_SF_CAL .customInnerInfoIcon_SF_CAL {
+  display: inline-block;
+  margin-left: 7px;
+}
+
+.sf-js-purchase-show {
+  margin-top: 15px;
+}
+
+.purchase_SF_CAL .bmw-i-icon {
+  background: #1c69d4;
+}
+
+.purchase_SF_CAL .bmw-i-icon:hover {
+  background: #1c69d4;
+  text-decoration: none;
+  color: #fff;
+}
+
+.customInnerInfoIcon_SF_CAL .bmw-i-icon {
+  background: #1c69d4;
+  text-decoration: none;
+  color: #fff;
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .topParent_SF_CAL .name_SF_CAL{
+    margin-top: 0;
+  }
+  /* .termInterest_SF_CAL.active>button {
+    font-size: 14px;
+  } */
+  .sf-js-terms-wrap-inner i {
+    top: 40px;
+  }
+  .topParent_SF_CAL select {
+    padding-left: 5px;
+  }
+  .sf-cal-js-popover {
+    width: 288px;
+  }
+  .termInterest_monthly_SF_CAL:after {
+    content: none;
+    margin: 0;
+  }
+  .sf-js-carousel-inner ul li .bmw-i-icon {
+    /* float: right; */
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .bmw-i-icon {
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    line-height: 15px;
+    font-size: 13px;
+  }
+  .sf-js-carousel-arrow div {
+    margin-left: 0px !important;
+  }
+  a.leftArrow_SF_CAL.sf-js-carousel-arrow div {
+    margin-left: 4px !important;
+  }
+  .sf-js-short-desc p {
+    word-wrap: break-word;
+    line-height: 1.4em;
+    max-height: 2.8em;
+    overflow: hidden;
+  }
+  .col-xs-12_SF_CAL {
+    padding: 0 10px;
+  }
+  .sf-js-carousel-inner {
+    width: 100%;
+    height: 113px;
+  }
+  .topParent_SF_CAL .header1_SF_CAL, .topParent_SF_CAL .custVal_SF_CAL {
+    font-size: 14px;
+  }
+  .sf-js-li-border {
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .topParent_SF_CAL .tabcontent_SF_CAL {
+    width: 100%;
+  }
+  .topParent_SF_CAL .custdiv_SF_CAL {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .topParent_SF_CAL .paddingRight1_SF_CAL {
+    padding-right: 20px;
+  }
+  .topParent_SF_CAL .paddingTop2_SF_CAL, .topParent_SF_CAL .paddingTop4_SF_CAL, .topParent_SF_CAL .amtMonthly_SF_CAL {
+    padding-top: 20px;
+  }
+  .sf-js-carousel-inner ul li {
+    width: 161px;
+    min-height: 114px;
+    padding: 0;
+  }
+  .sf-js-carousel-arrow {
+    height: 113px;
+  }
+  .bmw-i-icon {
+    right: 0;
+  }
+  .sf-js-carousel-inner ul li:after {
+    top: 25px;
+    height: 75px;
+  }
+  .topParent_SF_CAL .header_SF_CAL, .topParent_SF_CAL .taxValue_SF_CAL {
+    font-size: 13px;
+  }
+  .topParent_SF_CAL .SFamount_SF_CAL {
+    font-size: 16px;
+  }
+  .topParent_SF_CAL .paddingTop3_SF_CAL {
+    padding-top: 20px;
+  }
+  .topParent_SF_CAL .amtInput_SF_CAL {
+    font-size: 16px;
+  }
+  .topParent_SF_CAL .button_SF_CAL {
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+  }
+  .topParent_SF_CAL .purchaseTax_SF_CAL {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+  .topParent_SF_CAL .header2_SF_CAL {
+    font-size: 12px;
+  }
+  .condition_SF_CAL h3, .disclamier_SF_CAL h3 {
+    font-size: 12px;
+  }
+  .topParent_SF_CAL .datapadding_SF_CAL {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .topParent_SF_CAL .data_SF_CAL {
+    font-size: 12px;
+  }
+  .topParent_SF_CAL .drop_SF_CAL>div {
+    margin-left: 8px;
+  }
+  .topParent_SF_CAL .drop_SF_CAL {
+    width: 32px;
+  }
+  .topParent_SF_CAL .rightArrow_SF_CAL>div {
+    margin-left: -5px;
+  }
+  .topParent_SF_CAL .leftArrow_SF_CAL>div {
+    margin-left: 0;
+  }
+  .topParent_SF_CAL .active>a {
+    font-size: 15px;
+  }
+  .sf-js-carousel-title h2 {
+    width: 84%;
+  }
+  .topParent_SF_CAL .buttonTypes_SF_CAL {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .sf-js-terms-button {
+    top: 61px;
+    height: 102px;
+  }
+  .sf-js-terms-wrap-inner {
+    width: 100%;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .sf-js-terms-wrap-inner .header_SF_CAL {
+    margin-left: 0;
+  }
+  .topParent_SF_CAL .control_SF_CAL {
+    padding-top: 4px;
+  }
+  .sf-js-li-main {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 10px 12px 0;
+    top: 0;
+    /* margin-left: 1px; */
+  }
+  .termInterest_terms_SF_CAL {
+    display: block;
+  }
+  .topParent_SF_CAL .header_SF_CAL, .topParent_SF_CAL .header1_SF_CAL {
+    font-size: 15px;
+    color: #222222;
+    font-weight: normal;
+    right: 0px;
+    padding-top: 1px;
+  }
+  .topParent_SF_CAL .custdiv_SF_CAL {
+    padding-top: 14px;
+    /*border-bottom: 1px solid #e6e6e6;*/
+    padding-bottom: 20px;
+    right: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) and (orientation: portrait) {
+  .topParent_SF_CAL .header1_SF_CAL, .topParent_SF_CAL .custVal_SF_CAL {
+    font-size: 16px;
+  }
+  .sf-js-li-border {
+    width: 78%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .topParent_SF_CAL .custdiv_SF_CAL {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .topParent_SF_CAL .paddingRight1_SF_CAL {
+    padding-right: 40px;
+  }
+  .topParent_SF_CAL .paddingTop2_SF_CAL, .topParent_SF_CAL .paddingTop4_SF_CAL, .topParent_SF_CAL .amtMonthly_SF_CAL {
+    padding-top: 20px;
+  }
+  .bmw-i-icon {
+    right: -10px;
+  }
+  .sf-js-carousel-inner ul li {
+    width: 230px;
+  }
+  .topParent_SF_CAL .header_SF_CAL, .topParent_SF_CAL .taxValue_SF_CAL {
+    font-size: 16px;
+  }
+  .topParent_SF_CAL .SFamount_SF_CAL {
+    font-size: 18px;
+  }
+  .topParent_SF_CAL .paddingTop3_SF_CAL {
+    padding-top: 10px;
+  }
+  .topParent_SF_CAL .amtInput_SF_CAL {
+    font-size: 16px;
+  }
+  .topParent_SF_CAL .purchaseTax_SF_CAL {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+  .topParent_SF_CAL .header2_SF_CAL {
+    font-size: 12px;
+  }
+  .condition_SF_CAL h3, .disclamier_SF_CAL h3 {
+    font-size: 14px;
+  }
+  .topParent_SF_CAL .datapadding_SF_CAL {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .topParent_SF_CAL .data_SF_CAL {
+    font-size: 14px;
+  }
+  .topParent_SF_CAL .drop_SF_CAL>div {
+    margin-left: 8px;
+  }
+  .topParent_SF_CAL .drop_SF_CAL {
+    width: 32px;
+  }
+  .sf-js-terms-button {
+    top: 67px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .topParent_SF_CAL .paddingTop2_SF_CAL, .topParent_SF_CAL .paddingTop4_SF_CAL, .topParent_SF_CAL .amtMonthly_SF_CAL {
+    padding-top: 20px;
+  }
+  .sf-js-terms-wrap-inner {
+    padding: 5px 0;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .topParent_SF_CAL .paddingTop2_SF_CAL, .topParent_SF_CAL .paddingTop4_SF_CAL, .topParent_SF_CAL .amtMonthly_SF_CAL {
+    padding-top: 20px;
+  }
+  .sf-js-terms-wrap-inner {
+    padding: 5px 0;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) and (orientation: landscape) {
+  .topParent_SF_CAL .paddingTop2_SF_CAL, .topParent_SF_CAL .paddingTop4_SF_CAL, .topParent_SF_CAL .amtMonthly_SF_CAL {
+    padding-top: 20px;
+  }
+  .sf-js-terms-wrap-inner {
+    /* padding: 0 5px; */
+  }
+  .sf-js-terms-button {
+    height: 87px;
+    width: 20px;
+    background: #666;
+    /* border: 2px solid #666; */
+    position: absolute;
+    outline: none;
+    top: 62px;
+  }
+}
